@@ -1,5 +1,7 @@
 # needed to clear the terminal screen
 import os
+# epic time delays
+from time import sleep
 
 # clear the terminal screen
 # added this to not bother with the original command
@@ -101,6 +103,36 @@ def make_turn(x_or_o, board):
 
 # congratulates the winner with a nuclear mushroom
 def mushroom_win(winner):
+        print(f'''
+
+
+
+
+
+
+
+
+
+
+ _____.,-#%&$@%#&#~,._____
+''')
+        sleep(0.6)
+        clear_terminal()
+        print(f'''
+
+
+
+
+
+
+          | |   |             
+       .-=||  | |=-.   
+       `-=#$%&%$#=-'   
+          | ;  :|     
+ _____.,-#%&$@%#&#~,._____
+''')
+        sleep(0.6)
+        clear_terminal()
         print(f'''
      _.-^^---....,,--       
  _--                  --_  
