@@ -2,7 +2,7 @@
 
 Small python projects I do for fun.
 
-1. Tic-tac-toe. Download the file and run it with:
+1. Tic-tac-toe. Download the [file](./tic-tac-toe.py) and run it with:
 
    ```
    py tic-tac-toe.py
