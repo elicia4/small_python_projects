@@ -1,7 +1,7 @@
 # needed to clear the terminal screen
 import os
 # epic time delays
-from time import sleep
+import time 
 
 # clear the terminal screen
 # added this to not bother with the original command
@@ -116,7 +116,7 @@ def mushroom_win(winner):
 
  _____.,-#%&$@%#&#~,._____
 ''')
-        sleep(0.6)
+        time.sleep(0.6)
         clear_terminal()
         print(f'''
 
@@ -131,7 +131,7 @@ def mushroom_win(winner):
           | ;  :|     
  _____.,-#%&$@%#&#~,._____
 ''')
-        sleep(0.6)
+        time.sleep(0.6)
         clear_terminal()
         print(f'''
      _.-^^---....,,--       
