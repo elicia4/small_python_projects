@@ -1,25 +1,3 @@
-# # row winner for 3 sized side ttt
-# def row_winner(board):
-#     return (
-#            board[0][0] == board [0][1] == board[0][2] and board[0][0] != ' ' or
-#            board[1][0] == board [1][1] == board[1][2] and board[1][0] != ' ' or
-#            board[2][0] == board [2][1] == board[2][2] and board[2][0] != ' '
-#            )
-
-# # column winner for 3 sized side ttt
-# def column_winner(board):
-#     return (
-#            board[0][0] == board[1][0] == board[2][0] and board[0][0] != ' ' or
-#            board[0][1] == board[1][1] == board[2][1] and board[0][1] != ' ' or 
-#            board[0][2] == board[1][2] == board[2][2] and board[0][2] != ' '
-#            )
-
-# # diagonal winner for 3 sized side ttt
-# def diagonal_winner(board):
-#     return (
-#            board[0][0] == board[1][1] == board[2][2] and board[1][1] != ' ' or
-#            board[0][2] == board[1][1] == board[2][0] and board[1][1] != ' '
-#            )
 import os
 
 def clear_terminal():
