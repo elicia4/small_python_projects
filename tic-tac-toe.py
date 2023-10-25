@@ -1,8 +1,11 @@
+# needed to clear the terminal screen
 import os
 
+# added this to not bother with the original command
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+# checks is a player has already won a row
 def row_winner(board):
     side_len = len(board[0])
     for row in range(side_len):
@@ -21,6 +24,7 @@ def row_winner(board):
     # if no checks returned True, there were no winning rows
     return False
 
+# checks is a player has already won a column
 def column_winner(board):
     side_len = len(board[0])
     for column in range(side_len):
@@ -37,6 +41,7 @@ def column_winner(board):
             return res
     return False
 
+# checks is a player has already won a diagonal
 def diagonal_winner(board):
     side_len = len(board[0])
 
@@ -60,21 +65,25 @@ def diagonal_winner(board):
     # if either diagonal is right, the player wins
     return (res1 or res2)
 
-# check if somebody won or not
+# check if somebody met one of the three win conditions
 def winner(board):
     return diagonal_winner(board) or row_winner(board) or\
            column_winner(board)
 
+# print the board to STDOUT
 def print_board(board):
-    print(f"\n |1|2|3|")
-    print(f"-+-+-+-+")
-    print(f"1|{'|'.join(board[0])}|")
-    print(f"-+-+-+-+")
-    print(f"2|{'|'.join(board[1])}|")
-    print(f"-+-+-+-+")
-    print(f"3|{'|'.join(board[2])}|")
-    print(f"-+-+-+-+\n")
+    print(f"""
+ |1|2|3|
+-+-+-+-+
+1|{'|'.join(board[0])}|
+-+-+-+-+
+2|{'|'.join(board[1])}|
+-+-+-+-+
+3|{'|'.join(board[2])}|
+-+-+-+-+
+""")
     
+# makes a turn
 def make_turn(x_or_o, board):
     if x_or_o:
         c = 'X'
@@ -89,7 +98,8 @@ def make_turn(x_or_o, board):
         board = make_turn(x_or_o, board)
     return board
 
-def mushroom_win(winner): # congratulates the winner with a nuclear mushroom
+# congratulates the winner with a nuclear mushroom
+def mushroom_win(winner):
         print(f'''
      _.-^^---....,,--       
  _--                  --_  
