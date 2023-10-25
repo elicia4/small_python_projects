@@ -1,11 +1,12 @@
 # needed to clear the terminal screen
 import os
 
+# clear the terminal screen
 # added this to not bother with the original command
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# checks is a player has already won a row
+# checks if a player has already won a row
 def row_winner(board):
     side_len = len(board[0])
     for row in range(side_len):
@@ -24,7 +25,7 @@ def row_winner(board):
     # if no checks returned True, there were no winning rows
     return False
 
-# checks is a player has already won a column
+# checks if a player has already won a column
 def column_winner(board):
     side_len = len(board[0])
     for column in range(side_len):
@@ -41,7 +42,7 @@ def column_winner(board):
             return res
     return False
 
-# checks is a player has already won a diagonal
+# checks if a player has already won a diagonal
 def diagonal_winner(board):
     side_len = len(board[0])
 
