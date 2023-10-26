@@ -165,19 +165,25 @@ def main():
     # clear the terminal before the game starts
     clear_terminal()
     # iterates while there's no winner
-    while not winner(board):
+    turns = 0
+    while not winner(board) and not turns == 9:
         # iterates turns
+        turns += 1 
         xturn = not xturn
         # makes a turn
         print(format_board(board))
         board = make_turn(xturn, board)
         clear_terminal()
         # prints the board after a player makes a move
-
-    if xturn:
-        mushroom_win('X')
+     
+    # in case of a draw
+    if turns == 9 and not winner(board):
+        print("=== It's a draw ===")
     else:
-        mushroom_win('O')
+        if xturn:
+            mushroom_win('X')
+        else:
+            mushroom_win('O')
 
 if __name__ == "__main__":
     main()
