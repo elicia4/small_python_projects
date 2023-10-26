@@ -47,26 +47,20 @@ def column_winner(board):
 # checks if a player has already won a diagonal
 def diagonal_winner(board):
     side_len = len(board[0])
-
-    res1 = True
-    res2 = True
-    # first diagonal
+    # checks first diagonal
     item = board[0][0]
     for row in range(side_len):
+        # if it failes, check second diagonal and break
         if board[row][row] != item or board[row][row]  == ' ':
-            res1 = False
+            # check second diagonal
+            item = board[0][side_len - 1]
+            for row in range(side_len):
+                # if it failes, both diagonals are not full
+                if board[row][side_len - 1 - row] != item or\
+                   board[row][side_len - 1 - row] == ' ':
+                    return False
             break
-
-    # second diagonal
-    item = board[0][side_len - 1]
-    for row in range(side_len):
-        if board[row][side_len - 1 - row] != item or\
-           board[row][side_len - 1 - row] == ' ':
-            res2 = False
-            break
-
-    # if either diagonal is right, the player wins
-    return (res1 or res2)
+    return True
 
 # check if somebody met one of the three win conditions
 def winner(board):
