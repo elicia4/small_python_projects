@@ -106,6 +106,12 @@ def make_turn(x_or_o, board):
         board = make_turn(x_or_o, board)
     return board
 
+def make_board(size):
+    board = []
+    for i in range(size):
+        board.append([' '] * size)
+    return board
+
 # congratulates the winner with a nuclear mushroom
 def mushroom_win(winner):
         print(f'''
@@ -154,12 +160,8 @@ def mushroom_win(winner):
 # "Mushroom cloud" from https://www.asciiart.eu/weapons/explosives
 
 def main():
-    # defines an empty board
-    board = [
-        [' ', ' ', ' '],
-        [' ', ' ', ' '],
-        [' ', ' ', ' ']
-    ]
+    # create an empty board
+    board = make_board(3)
     # determines whether it's X's turn or not, False by default
     xturn = False 
     # clear the terminal before the game starts
