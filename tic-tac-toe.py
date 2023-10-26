@@ -159,16 +159,22 @@ def mushroom_win(winner):
 ''')
 # "Mushroom cloud" from https://www.asciiart.eu/weapons/explosives
 
-def main():
+def play_game():
     # create an empty board
-    board = make_board(3)
+    size = 3
+    tmp = input("Would you like to change the board size? (default - 3)")
+    # checks if tmp is a number
+    if tmp.isdigit():
+        print("tmp is a digit")
+        size = int(tmp)
+    board = make_board(size)
     # determines whether it's X's turn or not, False by default
     xturn = False 
     # clear the terminal before the game starts
     clear_terminal()
     # iterates while there's no winner
     turns = 0
-    while not winner(board) and not turns == 9:
+    while not winner(board) and not turns == size * size:
         # iterates turns
         turns += 1 
         xturn = not xturn
@@ -179,7 +185,7 @@ def main():
         # prints the board after a player makes a move
      
     # in case of a draw
-    if turns == 9 and not winner(board):
+    if turns == size * size and not winner(board):
         print("=== It's a draw ===")
     else:
         if xturn:
@@ -187,5 +193,4 @@ def main():
         else:
             mushroom_win('O')
 
-if __name__ == "__main__":
-    main()
+play_game()
