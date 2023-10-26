@@ -96,7 +96,8 @@ def make_turn(x_or_o, board):
         c = 'X'
     else:
         c = 'O'
-    x, y = input(f'{c}? ').split()
+    x = input(f'{c} row? ')
+    y = input(f'{c} column? ')
     x, y = [int(x) - 1, int(y) - 1]
     if (board[x][y] == ' '):
         board[x][y] = f'{c}'

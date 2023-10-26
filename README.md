@@ -10,4 +10,4 @@ Small python projects I do for fun.
    py tic-tac-toe.py
    ```
 
-   To select a field, for example field 1-1, type `1 1`.
+   Follow the prompts and you'll figure out how to play :)
