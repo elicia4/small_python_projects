@@ -160,13 +160,14 @@ def mushroom_win(winner):
 # "Mushroom cloud" from https://www.asciiart.eu/weapons/explosives
 
 def play_game():
+    # get the board size
+    size = input("Enter the board size (default - 3): ")
+    # checks if size is a number
+    if size.isdigit():
+        size = int(size)
+    else:
+        size = 3
     # create an empty board
-    size = 3
-    tmp = input("Would you like to change the board size? (default - 3)")
-    # checks if tmp is a number
-    if tmp.isdigit():
-        print("tmp is a digit")
-        size = int(tmp)
     board = make_board(size)
     # determines whether it's X's turn or not, False by default
     xturn = False 
