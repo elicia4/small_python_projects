@@ -186,7 +186,11 @@ def play_game():
      
     # in case of a draw
     if turns == size * size and not winner(board):
-        print("=== It's a draw ===")
+        print(f"""
+        ===================
+        === It's a draw ===
+        ===================
+        """)
     else:
         if xturn:
             mushroom_win('X')
