@@ -73,19 +73,29 @@ def winner(board):
     return diagonal_winner(board) or row_winner(board) or\
            column_winner(board)
 
-# print the board to STDOUT
-def print_board(board):
-    print(f"""
- |1|2|3|
--+-+-+-+
-1|{'|'.join(board[0])}|
--+-+-+-+
-2|{'|'.join(board[1])}|
--+-+-+-+
-3|{'|'.join(board[2])}|
--+-+-+-+
-""")
-    
+# format the board and return
+def format_board(board):
+    joined_rows = []
+    divid_string = ""
+    # calculate the top string
+    top_string = " |"
+    for i in range(len(board[0])):
+        top_string += f"{i + 1}|"
+    joined_rows.append(top_string)
+    # calculates the dividing string
+    for i in range(2 * len(board[0]) + 2):
+        if i % 2:
+            divid_string += '+'
+        else:
+            divid_string += '-'
+    joined_rows.append(divid_string)
+    # adds the board to the top 2 lines
+    board_size = len(board)
+    for i in range(board_size):
+        joined_rows.append(f"{i + 1}|{'|'.join(board[i])}|")
+        joined_rows.append(divid_string)
+    return "\n".join(joined_rows)
+
 # makes a turn
 def make_turn(x_or_o, board):
     if x_or_o:
@@ -163,7 +173,7 @@ def main():
         # iterates turns
         xturn = not xturn
         # makes a turn
-        print_board(board)
+        print(format_board(board))
         board = make_turn(xturn, board)
         clear_terminal()
         # prints the board after a player makes a move
