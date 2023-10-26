@@ -153,7 +153,7 @@ def mushroom_win(winner):
 # "Mushroom cloud" from https://www.asciiart.eu/weapons/explosives
 
 def main():
-    # defines an empty board and prints it
+    # defines an empty board
     board = [
         [' ', ' ', ' '],
         [' ', ' ', ' '],
@@ -161,8 +161,9 @@ def main():
     ]
     # determines whether it's X's turn or not, False by default
     xturn = False 
-    # iterates while there's no winner
+    # clear the terminal before the game starts
     clear_terminal()
+    # iterates while there's no winner
     while not winner(board):
         # iterates turns
         xturn = not xturn
