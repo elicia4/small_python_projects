@@ -64,8 +64,8 @@ def diagonal_winner(board):
 
 # check if somebody met one of the three win conditions
 def winner(board):
-    return diagonal_winner(board) or row_winner(board) or\
-           column_winner(board)
+    return any([diagonal_winner(board), row_winner(board),
+                column_winner(board)])
 
 # format the board and return
 def format_board(board):
