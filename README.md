@@ -18,9 +18,9 @@ Small python projects I do for fun.
    final list of requirements sorted by popularity and a file with the same
    list.
 
-1. [A simple IPv4 converter program](./ip_converter.py) that helps you figure
-   out the network address, broadcast address, first and last usable addresses,
-   and subnet mask based on an IP address and a prefix length. Here's an
-   example with an IP address of **43.109.23.12 / 8**:
+1. [An IPv4 converter program](./ip_converter.py) to help you easily determine
+   the network address, broadcast address, first and last usable addresses, and
+   subnet mask based on an IP address and prefix length. For example, with an
+   IP address of **43.109.23.12 / 8**:
 
    ![IP conversion example](./img/ip_example.png)
