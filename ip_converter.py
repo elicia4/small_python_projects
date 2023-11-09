@@ -69,7 +69,7 @@ def get_last_usable_address(binary_ip, prefix_length):
 def get_max_hosts(prefix_length):
     if prefix_length > 30:
         return 0
-    return (2 ** (32 - prefix_length) - 2)
+    return f'{(2 ** (32 - prefix_length) - 2):,}'
 
 # main 
 ip = input("Enter the IP address: ")
