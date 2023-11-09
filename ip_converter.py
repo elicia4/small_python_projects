@@ -65,6 +65,12 @@ def get_last_usable_address(binary_ip, prefix_length):
                           + (32 - prefix_length - 1) * '1' + '0'
     return last_usable_address
 
+# get the maximum number of hosts available in a network
+def get_max_hosts(prefix_length):
+    if prefix_length > 30:
+        return 0
+    return (2 ** (32 - prefix_length) - 2)
+
 # main 
 ip = input("Enter the IP address: ")
 binary_ip = get_binary_ip(ip)
@@ -73,9 +79,10 @@ prefix_length = int(input("Enter the prefix length: "))
 print(f"""
 #######################################
 Network Address:        {get_decimal_ip(get_network_address(binary_ip, prefix_length))}
+Subnet Mask:            {get_decimal_ip(get_subnet_mask(prefix_length))}
+Available Hosts:        {get_max_hosts(prefix_length)}
 Broadcast Address:      {get_decimal_ip(get_broadcast_address(binary_ip, prefix_length))}
 First Usable Address:   {get_decimal_ip(get_first_usable_address(binary_ip, prefix_length))}
 Last Usable Address:    {get_decimal_ip(get_last_usable_address(binary_ip, prefix_length))}
-Subnet Mask:            {get_decimal_ip(get_subnet_mask(prefix_length))}
 #######################################
 """)
