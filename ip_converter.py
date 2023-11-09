@@ -6,11 +6,9 @@
 def get_binary_ip(ip):
     # split the IP by octets
     ip_octets = ip.split('.')
-    # convert to a list of 4 ints
-    ip_octets = list(map(int, ip_octets))
     binary_ip = ''
     for octet in ip_octets:
-        binary_ip += f'{octet:08b}'
+        binary_ip += f'{int(octet):08b}'
     return binary_ip
 
 # returns the decimal ip string from the binary ip string
