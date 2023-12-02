@@ -74,11 +74,11 @@ def format_board(board):
     # calculate the top string
     top_string = " |"
     for i in range(len(board[0])):
-        top_string += f"{i + 1}|"
+        top_string += f" {i + 1} |"
     joined_rows.append(top_string)
     # calculates the dividing string
-    for i in range(2 * len(board[0]) + 2):
-        if i % 2:
+    for i in range(4 * len(board[0]) + 2):
+        if i % 4 == 1:
             divid_string += '+'
         else:
             divid_string += '-'
@@ -86,7 +86,7 @@ def format_board(board):
     # adds the board to the top 2 lines
     board_size = len(board)
     for i in range(board_size):
-        joined_rows.append(f"{i + 1}|{'|'.join(board[i])}|")
+        joined_rows.append(f"{i + 1}| {' | '.join(board[i])} |")
         joined_rows.append(divid_string)
     return "\n".join(joined_rows)
 
