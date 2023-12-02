@@ -1,16 +1,13 @@
 # Python Projects
 
-![Epic Victory Explosion Image](./img/explosion.png)
-
-Small python projects I do for fun.
-
 1. Tic-tac-toe. Download the [file](./tic-tac-toe.py) and run it with:
 
    ```
    py tic-tac-toe.py
    ```
 
-   Follow the prompts and you'll figure out how to play :)
+   Follow the prompts and you'll figure out how to play (:  
+   ![Epic Victory Explosion Image](./img/explosion.png)
 
 1. [A small program](./requirements_sorter.py) to help you find a job.
    You enter job requirements from different job descriptions, the program
