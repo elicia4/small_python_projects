@@ -10,10 +10,12 @@
    ![Epic Victory Explosion Image](./img/explosion.png)
 
 1. [A small program](./requirements_sorter.py) to help you find a job.
+   
    You enter job requirements from different job descriptions, the program
-   reads them and figures out which ones are more popular than others. When
-   you're done, you get the final list of requirements sorted by popularity and
-   a file with the same list.
+   reads them and figures out which ones are more frequent than others. 
+
+   When you're done, you get the final list of requirements sorted by
+   frequency and a file containing it.
 
 1. [An IPv4 converter program](./ip_converter.py) to help you easily determine
    the network address, broadcast address, first and last usable addresses, and
