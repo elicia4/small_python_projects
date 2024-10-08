@@ -39,15 +39,14 @@ prioritize studying while applying for a job.
 requirements = get_sorted_techs()
 
 print(f"""
-#############################################
-Here's the final sorted list of requirements:
-#############################################""")
+Here's the final sorted list of requirements: """)
 
 print_requirements(requirements)
 
 # write the final result to the sorted_requirements.txt file
 with open("sorted_requirements.txt", "w") as file:
-    for key in requirements.keys():
-        print(f"{key} {requirements[key]}", file=file)
-print("""#############################################\n
+    for i, tech in enumerate(requirements):
+        print(f"{i + 1}: {tech} {requirements[tech]}", file=file)
+
+print(f"""
 Printed the sorted list to the \"sorted_requirements.txt\" file.""")
